@@ -60,3 +60,19 @@ record ConstructorsNeedTheSameVisibility(int aComponent) {
 		this(custom.hashCode());
 	}
 }
+
+record CompactConstructorsCannotAssignComponentValues(int aComponent) {
+
+	CompactConstructorsCannotAssignComponentValues {
+	// compact constructors cannot assign values to fields as well
+	//	this.aComponent = 12;
+	}
+}
+
+record FullConstructorsCannotAliasParameterNames(int aComponent) {
+
+//	FullConstructorsCannotAliasParameterNames(int anotherName) {
+//		// full constructors cannot use parameters with names different than components
+//		this.aComponent = anotherName;
+//	}
+}
